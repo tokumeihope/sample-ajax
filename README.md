@@ -3,3 +3,6 @@
 
 ajaxのgetを行うためのテンプレート
 # jQuery側のjsonオブジェクトの準備
+```javascript
+formData = {};
+``````````
