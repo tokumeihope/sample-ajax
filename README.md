@@ -1,7 +1,6 @@
-# sample-ajax
-授業中のリソースの置き場所
-
+# 授業中のリソースの置き場所 : 07/14(水)
 ajax の get を行う為のテンプレート
+
 ## jQuery 側の json オブジェクトの準備
 ```javascript
 formData = {};
@@ -38,4 +37,19 @@ param1=%E3%83%86%E3%82%B9%E3%83%88&_=1626243759099
 ```php
 $json = new stdClass;
 $json->get = $_GET;
+```
+## $.ajaxに返す為の json フォーマットの文字列を json_encode 関数で作成する
+```php
+print json_encode( $json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
+```
+## PHP より返却された json を .doneで data として受け取る
+```javascript
+{
+	"get": {
+		"param1": "テスト",
+		"_": "1626244981881"
+	},
+	"post": [],
+	"session": []
+}
 ```
